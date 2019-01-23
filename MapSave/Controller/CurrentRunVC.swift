@@ -16,6 +16,7 @@ class CurrentRunVC: LocationVC {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var pauseBtn: UIButton!
     
+    @IBOutlet weak var containerView: UIView!
     var startLocation: CLLocation!
     var lastLocation: CLLocation!
     
@@ -28,6 +29,7 @@ class CurrentRunVC: LocationVC {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        containerView.layer.cornerRadius = 5
         manager?.delegate = self
         manager?.distanceFilter = 10
         startRun()
