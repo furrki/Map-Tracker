@@ -20,6 +20,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location is Needed</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This is needed for app</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Location is needed</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This is needed for app</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -28,6 +36,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -39,13 +49,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This is needed for app</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>This is needed for app</string>
-	<key>NSLocationUsageDescription</key>
-	<string>Location is needed</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Location is Needed</string>
 </dict>
 </plist>

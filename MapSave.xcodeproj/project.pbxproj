@@ -20,6 +20,13 @@
 		84078C3421F66BA800D01798 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84078C3321F66BA800D01798 /* LogCell.swift */; };
 		84078C3521F66BA800D01798 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84078C3321F66BA800D01798 /* LogCell.swift */; };
 		84078C3621F66BA800D01798 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84078C3321F66BA800D01798 /* LogCell.swift */; };
+		844BD85721F8EBE2008F28AE /* CurrentRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD85621F8EBE2008F28AE /* CurrentRun.swift */; };
+		844BD85821F8EBE2008F28AE /* CurrentRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD85621F8EBE2008F28AE /* CurrentRun.swift */; };
+		844BD85921F8EBE2008F28AE /* CurrentRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BD85621F8EBE2008F28AE /* CurrentRun.swift */; };
+		844BD85B21F8F44E008F28AE /* bar_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 844BD85A21F8F44E008F28AE /* bar_home.png */; };
+		844BD85C21F8F44E008F28AE /* bar_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 844BD85A21F8F44E008F28AE /* bar_home.png */; };
+		844BD85D21F8F44E008F28AE /* bar_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 844BD85A21F8F44E008F28AE /* bar_home.png */; };
+		844BD85F21F8F8BF008F28AE /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 844BD85E21F8F8BF008F28AE /* bg.jpg */; };
 		84FB658121CBE8D100EDC606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB658021CBE8D100EDC606 /* AppDelegate.swift */; };
 		84FB658321CBE8D100EDC606 /* BeginRunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB658221CBE8D100EDC606 /* BeginRunVC.swift */; };
 		84FB658621CBE8D100EDC606 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84FB658421CBE8D100EDC606 /* Main.storyboard */; };
@@ -67,6 +74,9 @@
 		84078C2B21F664DD00D01798 /* RealmConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfig.swift; sourceTree = SOURCE_ROOT; };
 		84078C2F21F6657200D01798 /* RunObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunObject.swift; sourceTree = SOURCE_ROOT; };
 		84078C3321F66BA800D01798 /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
+		844BD85621F8EBE2008F28AE /* CurrentRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentRun.swift; sourceTree = "<group>"; };
+		844BD85A21F8F44E008F28AE /* bar_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar_home.png; sourceTree = "<group>"; };
+		844BD85E21F8F8BF008F28AE /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		84FB657D21CBE8D100EDC606 /* MapSave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapSave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84FB658021CBE8D100EDC606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84FB658221CBE8D100EDC606 /* BeginRunVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginRunVC.swift; sourceTree = "<group>"; };
@@ -214,7 +224,7 @@
 				84078C2721F664A700D01798 /* Constants.swift */,
 				84078C2B21F664DD00D01798 /* RealmConfig.swift */,
 			);
-			path = Utils;
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		84FB65B021CBEA3100EDC606 /* Controller */ = {
@@ -240,16 +250,19 @@
 			isa = PBXGroup;
 			children = (
 				84078C2F21F6657200D01798 /* RunObject.swift */,
+				844BD85621F8EBE2008F28AE /* CurrentRun.swift */,
 			);
-			path = Model;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		84FB65B321CBEA4500EDC606 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				844BD85E21F8F8BF008F28AE /* bg.jpg */,
 				84FB65B421CBEA8A00EDC606 /* play.png */,
 				84FB65B621CBEA9000EDC606 /* pause.png */,
 				84FB65B821CBEA9C00EDC606 /* stop.png */,
+				844BD85A21F8F44E008F28AE /* bar_home.png */,
 			);
 			path = Res;
 			sourceTree = "<group>";
@@ -365,8 +378,10 @@
 				84FB658B21CBE8D400EDC606 /* LaunchScreen.storyboard in Resources */,
 				84FB65B521CBEA8A00EDC606 /* play.png in Resources */,
 				84FB65B721CBEA9000EDC606 /* pause.png in Resources */,
+				844BD85B21F8F44E008F28AE /* bar_home.png in Resources */,
 				84FB658821CBE8D400EDC606 /* Assets.xcassets in Resources */,
 				84FB658621CBE8D100EDC606 /* Main.storyboard in Resources */,
+				844BD85F21F8F8BF008F28AE /* bg.jpg in Resources */,
 				84FB65B921CBEA9C00EDC606 /* stop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844BD85C21F8F44E008F28AE /* bar_home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +398,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844BD85D21F8F44E008F28AE /* bar_home.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +508,7 @@
 				84078C3021F6657200D01798 /* RunObject.swift in Sources */,
 				84FB65BC21CBEFCF00EDC606 /* RunLogVCViewController.swift in Sources */,
 				84078C2C21F664DD00D01798 /* RealmConfig.swift in Sources */,
+				844BD85721F8EBE2008F28AE /* CurrentRun.swift in Sources */,
 				84FB658321CBE8D100EDC606 /* BeginRunVC.swift in Sources */,
 				84078C2821F664A700D01798 /* Constants.swift in Sources */,
 				84FB65BE21CEDDE400EDC606 /* CurrentRunVC.swift in Sources */,
@@ -505,6 +523,7 @@
 				84078C3521F66BA800D01798 /* LogCell.swift in Sources */,
 				84FB659621CBE8D500EDC606 /* MapSaveTests.swift in Sources */,
 				84078C2921F664A700D01798 /* Constants.swift in Sources */,
+				844BD85821F8EBE2008F28AE /* CurrentRun.swift in Sources */,
 				84078C3121F6657200D01798 /* RunObject.swift in Sources */,
 				84078C2D21F664DD00D01798 /* RealmConfig.swift in Sources */,
 			);
@@ -517,6 +536,7 @@
 				84078C3621F66BA800D01798 /* LogCell.swift in Sources */,
 				84FB65A121CBE8D500EDC606 /* MapSaveUITests.swift in Sources */,
 				84078C2A21F664A700D01798 /* Constants.swift in Sources */,
+				844BD85921F8EBE2008F28AE /* CurrentRun.swift in Sources */,
 				84078C3221F6657200D01798 /* RunObject.swift in Sources */,
 				84078C2E21F664DD00D01798 /* RealmConfig.swift in Sources */,
 			);

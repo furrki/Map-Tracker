@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Run-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="BeginRunVC" customModule="MapSave" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,26 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v2c-xe-bup">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VMZ-5H-Mwr">
+                                <rect key="frame" x="0.0" y="28" width="375" height="590"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v2c-xe-bup">
                                 <rect key="frame" x="0.0" y="93" width="375" height="440"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Run" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odv-ie-y1Y">
                                 <rect key="frame" x="104" y="55" width="167" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvo-Dc-fav">
-                                <rect key="frame" x="172.5" y="541" width="30" height="30"/>
-                                <state key="normal" title="Rec"/>
-                                <connections>
-                                    <segue destination="D2X-m6-Z7l" kind="show" id="8GN-eA-H8v"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Running" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0y-fd-g08">
                                 <rect key="frame" x="148.5" y="579" width="78" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRS-Df-PaZ">
@@ -48,6 +45,15 @@
                                 <state key="normal" image="play.png"/>
                                 <connections>
                                     <action selector="locationCenterButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qy4-13-h6r"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uvo-Dc-fav">
+                                <rect key="frame" x="151" y="541" width="75" height="30"/>
+                                <state key="normal" title="Rec">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="D2X-m6-Z7l" kind="show" id="8GN-eA-H8v"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,7 +67,7 @@
                             <constraint firstItem="B0y-fd-g08" firstAttribute="top" secondItem="Uvo-Dc-fav" secondAttribute="bottom" constant="8" id="E8g-ro-wRj"/>
                             <constraint firstItem="v2c-xe-bup" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HWi-wU-WU2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="B0y-fd-g08" secondAttribute="bottom" constant="24" id="J5U-kF-MVb"/>
-                            <constraint firstItem="Uvo-Dc-fav" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lfm-PK-ERO"/>
+                            <constraint firstItem="Uvo-Dc-fav" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="Lfm-PK-ERO"/>
                             <constraint firstItem="Uvo-Dc-fav" firstAttribute="top" secondItem="v2c-xe-bup" secondAttribute="bottom" constant="8" id="OT4-c0-LhH"/>
                             <constraint firstItem="Odv-ie-y1Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="S05-nr-3s8"/>
                             <constraint firstItem="VRS-Df-PaZ" firstAttribute="top" secondItem="v2c-xe-bup" secondAttribute="bottom" constant="-60" id="Vvs-FH-GJn"/>
@@ -70,7 +76,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Run" id="op3-T7-OWQ"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="bar_home.png" id="op3-T7-OWQ"/>
                     <connections>
                         <outlet property="mapView" destination="v2c-xe-bup" id="Ni0-Rc-FIo"/>
                     </connections>
@@ -205,7 +211,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JMJ-6g-uc4">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="pOh-5r-69n"/>
@@ -216,7 +222,7 @@
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
-        <!--Log-->
+        <!--Run LogVC View Controller-->
         <scene sceneID="VBp-Vs-NPT">
             <objects>
                 <viewController id="4HP-sx-9Jq" customClass="RunLogVCViewController" customModule="MapSave" customModuleProvider="target" sceneMemberID="viewController">
@@ -227,10 +233,10 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okD-MJ-jxd">
                                 <rect key="frame" x="171.5" y="30" width="32" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gsz-cg-RcM">
+                            <tableView clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gsz-cg-RcM">
                                 <rect key="frame" x="0.0" y="61" width="375" height="525"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -242,7 +248,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79D-nc-WfA">
-                                                    <rect key="frame" x="263" y="40" width="97" height="11"/>
+                                                    <rect key="frame" x="263" y="39.5" width="97" height="11"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="97" id="Dqd-zB-gGv"/>
                                                     </constraints>
@@ -309,6 +315,10 @@
                                     <outlet property="delegate" destination="4HP-sx-9Jq" id="Rgf-pU-k8a"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="btd-uI-wwb">
+                                <rect key="frame" x="0.0" y="28" width="375" height="590"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -321,7 +331,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="muI-d5-zAg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Log" id="TVx-T1-kO2"/>
+                    <tabBarItem key="tabBarItem" title="" systemItem="history" id="TVx-T1-kO2"/>
                     <connections>
                         <outlet property="runlogTable" destination="gsz-cg-RcM" id="SIF-Ug-C5y"/>
                     </connections>
@@ -332,6 +342,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bar_home.png" width="32" height="32"/>
+        <image name="bg.jpg" width="1920" height="1280"/>
         <image name="play.png" width="76" height="76"/>
     </resources>
 </document>

@@ -18,13 +18,8 @@ class CurrentRunVC: LocationVC {
     
     var startLocation: CLLocation!
     var lastLocation: CLLocation!
-    var runDistance = 0.0
-    var counter = 0
-    var pace = 0.0
-    var poses: [[Double]] = []
+    
     var timer = Timer()
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,22 +40,22 @@ class CurrentRunVC: LocationVC {
         manager?.stopUpdatingLocation()
     }
     func startTimer(){
-        durationLabel.text = "\(counter.formatTimeDurationToString())"
+        durationLabel.text = "\(CurrentRun.counter.formatTimeDurationToString())"
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }
     func calculatePace(time seconds:Int, meters: Double) -> String{
-        pace = (meters / Double(seconds)).round(to: 2)
-        return "\(pace)"
+        CurrentRun.pace = (meters / Double(seconds)).round(to: 2)
+        return "\(CurrentRun.pace)"
     }
     @objc func updateCounter(){
-        counter += 1
-        durationLabel.text = "\(counter.formatTimeDurationToString())"
+        CurrentRun.counter += 1
+        durationLabel.text = "\(CurrentRun.counter.formatTimeDurationToString())"
         
     }
     
     @IBAction func StopBtnClicked(_ sender: Any) {
         manager?.stopUpdatingLocation()
-        RunObject.insert(dist: runDistance, duration: counter, poses: poses)
+        RunObject.insert(dist: CurrentRun.runDistance, duration: CurrentRun.counter, poses: CurrentRun.poses)
         print(RunObject.getRuns()!)
         dismiss(animated: true, completion: nil)
     }
@@ -92,14 +87,14 @@ extension CurrentRunVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if startLocation == nil {
             startLocation = locations.first
-            
-            poses.append([locations.first!.coordinate.latitude, locations.first!.coordinate.longitude])
+            CurrentRun.poses.append([locations.first!.coordinate.latitude, locations.first!.coordinate.longitude])
         } else if let location = locations.last {
-            runDistance += lastLocation.distance(from: location).round(to: 2)
-            distanceLabel.text = "\(runDistance)"
-            if counter > 0 && runDistance > 0 {
-                paceLabel.text = calculatePace(time: counter, meters: runDistance)
-                poses.append([location.coordinate.latitude, location.coordinate.longitude])
+            
+            CurrentRun.runDistance += lastLocation.distance(from: location).round(to: 2)
+            distanceLabel.text = "\(CurrentRun.runDistance)"
+            if CurrentRun.counter > 0 && CurrentRun.runDistance > 0 {
+                paceLabel.text = calculatePace(time: CurrentRun.counter, meters: CurrentRun.runDistance)
+                CurrentRun.poses.append([location.coordinate.latitude, location.coordinate.longitude])
             }
         }
         lastLocation = locations.last
