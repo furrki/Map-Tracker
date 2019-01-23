@@ -15,6 +15,7 @@ class RunLogVCViewController: UIViewController, UITableViewDelegate,  UITableVie
         
     }
     @IBOutlet weak var runlogTable: UITableView!
+    @IBOutlet weak var bg: UIImageView!
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -26,7 +27,7 @@ class RunLogVCViewController: UIViewController, UITableViewDelegate,  UITableVie
         
         runlogTable.delegate = self
         runlogTable.dataSource = self
-        
+        view.sendSubviewToBack(bg)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
