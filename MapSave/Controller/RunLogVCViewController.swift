@@ -28,6 +28,7 @@ class RunLogVCViewController: UIViewController, UITableViewDelegate,  UITableVie
         runlogTable.delegate = self
         runlogTable.dataSource = self
         view.sendSubviewToBack(bg)
+        runlogTable.allowsSelection = true
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,22 +42,29 @@ class RunLogVCViewController: UIViewController, UITableViewDelegate,  UITableVie
         let cell = self.runlogTable.dequeueReusableCell(withIdentifier: "RunLogCell") as! LogCell
         if let runs = runs {
             cell.dateLabel.text = "\(runs[indexPath.row].date)"
-            cell.metersLabel.text = "\(runs[indexPath.row].dist) m"
+            cell.metersLabel.text = "\(runs[indexPath.row].dist.round(to: 2)) m"
             cell.avgPaceLabel.text = "\((runs[indexPath.row].dist/Double(runs[indexPath.row].duration)).round(to: 3))"
             cell.timeLabel.text = "\(runs[indexPath.row].duration.formatTimeDurationToString())"
         }
         return cell
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "DetailsSegue", sender: indexPath.row)
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is DetailsVC {
+            let run = runs![sender as! Int]
+            let destinationVC = segue.destination as! DetailsVC
+            destinationVC.pace = (run.dist/Double(run.duration)).round(to: 3)
+            destinationVC.runDistance = run.dist
+            destinationVC.counter = run.duration
+            for i in 0..<run.lats.count {
+                destinationVC.poses.append([run.lats[i], run.lons[i]])
+            }
+        }
+    }
     
 }
 
